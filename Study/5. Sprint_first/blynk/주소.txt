@@ -1,0 +1,7 @@
+https://192.168.101.101:9443/admin => 블링크 서버 
+
+메일 주소  soda@soda.cc
+pass soda
+
+
+https://docs.blynk.cc/ : 블링크 doc
