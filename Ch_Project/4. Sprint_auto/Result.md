@@ -5,6 +5,7 @@
 
 
 ## 결과 : 조작 버튼에 따른 주행 모드 변경 및 google assistant을 사용
+![KakaoTalk_20210625_115729342](https://user-images.githubusercontent.com/81665620/123362982-97a20100-d5ac-11eb-96b7-01a448427c67.jpg)
 
 ### 보완 할 점 :  
 
