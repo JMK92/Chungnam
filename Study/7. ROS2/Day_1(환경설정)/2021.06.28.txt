@@ -1,0 +1,14 @@
+* node     : 작은단위의 실행노드 
+* package : 노드의 모음
+* topic     : -> 센서값을 check 
+* publisher / subscriber 
+* service / service call -> 한번에 값을 받아 처리할떄 사용
+* request / response
+
+
+
+# ros2 run turtlesim turtlesim_node
+# ros2 node list -t   # topic service
+# ros2 topic echo  # sub
+# ros2 topic pub  # pub/
+# ros2 service call # 
