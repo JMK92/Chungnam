@@ -1,0 +1,31 @@
+< bind 설명 코드 >
+
+std::bind()
+
+int sum(int a, int b)
+{
+	return a + b;
+}
+
+auto fun = std::bind(sum, std::placeholder::_1, std::placeholder::_2);
+int re = fun(10, 20);
+
+auto fun = std::bind(sum, 10, std::placeholder::_1);
+int re = fun(20);
+
+class A{
+public:
+	int sum(int a, int b) {
+		return a + b;
+	}
+	
+	void bindFunc(std::function<int(int, int)>& fun) {
+		auto fun = std::bind(&A::sum, this, std::placeholder::_1, std::placeholder::_2);
+	}
+}
+
+A a;
+
+auto fun;       // std::function<int(int, int)> fun;
+a.bindFunc(fun);
+fun(10, 20);

@@ -1,0 +1,14 @@
+< 터틀 봇 pkg 만들기 >
+colcon_ws / src 안에 만들
+
+ros2 pkg create turtle_pkg --build-type ament_cmake --dependencies rclcpp geometry_msgs --node-name teleop_pub기
+
+
+실행 순서
+colcon build
+source ~/.bashrc
+ros2 run turtle_pkg teleop_pub  // teleop_pub -> 노드 이름 모르면 cmakelist.txt안에 있음
+
+
+ ros2 run turtlesim turtlesim_node -r  __ns:=/for1003 -r chatter:=/turtle1/cmd_vel ->__ns = namespace 즉  for 1003 이름 그냥 JMK 해도 됨 개인 거북이
+
