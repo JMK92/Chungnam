@@ -1,0 +1,24 @@
+< 터틀봇 연결 >
+
+sudo apt install net-tools
+ifconfig
+
+ip : 10.42.0.123 linux 
+
+turtlebot : 10.42.0.1 
+
+원격 터틀봇 접속 ssh ubuntu@10.42.0.1
+비밀번호 : edgeilab
+
+다른 cmt에 ros2 node list 입력하여 아무것도 없어야 한다.
+
+ros2 launch turtlebot3_bringup robot.launch.py -> 다른 cmt에 ros2 topic list 해서 13개의 battery_state부터 마지막 tf_static 나와야 한다/
+
+배터리 연결후 
+ros2 topic echo /battery_state
+
+
+ros2 topic list -t -> type알아보기
+ros2 topic pub -h
+
+ros2 topic pub --once /cmd_vel /geometry_msgs/msg/Twist "{linear: {x:2.0, y:0.0, z:0.0}, angular: {x:0.0, y:0,0, z:0.0}}"
