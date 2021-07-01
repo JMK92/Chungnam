@@ -1,0 +1,36 @@
+
+-> windows   ===> getch
+  getch( ) / getche( )함수는 WINDOWS / DOS화면에서 Enter key를 누르지 않고 한 글자만 누르면 바로 반응하는 함수입니다. getch( )함수는 화면에 입력된 key 값을 보여주지 않고 입력을 하고, getche( )는 화면에 입력 내용을 보여줍니다.
+------------------------------
+-> Linux에서 getch만들기     ===>
+
+
+
+터틀 봇 설정에 들어가는 명령어
+gedit .bashrc
+
+들어가서
+export ROS_DOMAIN_ID=30 #TURTLEBOT3 밑에다가
+export TURTLEBOT3_MODEL = burger 추가
+
+source .bashrc 사용
+
+
+< 배터리 상태 sub 만들기 >
+colcon_ws 에서 src 들어가서 작업
+
+ ros2 pkg create my_turtlebot_pkg --build-type ament_cmake --dependencies rclcpp sensor_msgs --node-name battery_sub 만들어주기
+
+src 폴더안에 battery_sub 파일 만들고 이 안에 main.cpp, BatterySub.cpp, BatterySub.h 만들어주기
+
+후에 CMakeLists.txt 23번줄 라인으로 가서
+
+add_executable(battery_sub src/battery_sub/main.cpp src/battery_sub/BatterySub.cpp src/battery_sub/BatterySub.h) 바꿔주기
+
+만약 colcon build가 되지 않으면 CMakeLists.txt에서 23번째 라인 경로를 우선 살펴볼것
+
+sharedptr -> smartpointer => delete를 사용하지 않고 자동으로 호출됨 (핸들클래스)
+
+make_shared -> sharedptr로 가리킬수 있는것을 만든다.갈
+
+
