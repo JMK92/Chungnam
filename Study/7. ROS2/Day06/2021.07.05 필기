@@ -1,0 +1,24 @@
+mkdir cpp -> directory 만들기
+
+gedit hello.cpp -> hello.cpp 파일을 텍스트 파일로 열기 => 이렇게 사용 하지X
+
+< cpp 파일 실행 시키는 법 >
+g++ -c hello.cpp          컴파일러
+g++ -o hello hello.o
+./hello
+
+ctrl + d -> 리눅스 환경 (문장종료 endl같은거)
+
+문자열 상수 + 문자열 상수 X -> 이렇게 사용 X
+
+
+
+./wordCount < butter.txt 
+=> butter.txt를 wordCount에 대입시키기
+
+system call 운영체제리소스를 활용하기 위해서 C스타일의 함수
+
+redirect 입력
+
+
+rqt에서 우선 sound가 되는지 확인 0 ~ 4번까지 가능
