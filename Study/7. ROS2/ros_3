@@ -1,0 +1,59 @@
+ros2 run turtlesim turtlesim_node
+
+ros2 pkg create turtle_pkg --build-type ament_cmake --dependencies rclcpp geometry_msgs --node-name teleop_pub
+
+
+
+ros2 topic list -t
+ros2 topic echo /turtle1/cmd_vel
+
+
+cd colcon_ws
+	colcon build
+	source ~/.bashrc
+	ros2 pkg excutables turtle_pkg
+	ros2 run turtle_pkg teleop_pub
+
+
+i,j,m,l
+i:전진, m:후진, j:좌회전, l:우회전
+
+
+터틀시뮬레이터 나만 사용하기 -> namespace 지정해줌 (토픽 앞에 추가)
+
+ros2 run turtlesim turtlesim_node -r __ns:=/phil
+# ros2 run turtlesim turtlesim_node -r __ns:=/phil -r chatter:=/turtle1/cmd_vel
+
+
+
+wifi
+
+sudo apt install net-tools
+
+linux 		> 10.42.0.95
+turtlebot(ap) 	> 10.42.0.1
+
+
+원격으로 터미널 접속  >> 터틀봇
+ssh ubuntu@10.42.0.1
+yes
+패스워드 : edgeilab
+
+
+새로운 터미널창 열기  >> pc
+ros2 node list
+
+
+터틀봇쪽 터미널창
+ros2 launch turtlebot3_bringup robot.launch.py
+
+((pc))
+ros2 topic echo /battery_state
+
+ros2 topic list -t
+
+ros2 topic pub /cmd_vel /geometry_msgs/msg/Twist "{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+# 안됨 - The passed message type is invalid
+
+ros2 topic echo /magnetic_field
+ros2 topic echo /imu
