@@ -1,0 +1,50 @@
+ssh ubuntu@10.42.0.1
+
+ros2 launch turtlebot3_bringup robot.launch.py
+여러 개의 파일을 한번에 실행시킬 때 런치를 함...
+
+
+[다른 터미널]
+cd colcon_ws
+colcon build
+source ~/.bashrc
+ros2 run my_turtlebot_pkg teleop_pub
+
+
+
+https://docs.ros.org/en/dashing/Tutorials/Writing-A-Simple-Cpp-Service-And-Client.html
+
+
+	 <-- request ---
+server			   client
+	 --- response-->
+
+
+int64 a			int64 - 8byte 정수형
+int64 b
+---
+int64 sum
+
+
+
+
+cd colcon_ws/src
+
+[~/colcon_ws/src$]
+ros2 pkg create service_pkg --build-type ament_cmake --dependencies rclcpp --node-name service_node
+
+
+[CMakeLists.txt]
+
+find_package(example_interfaces REQUIRED)
+
+ament_target_dependencies(
+  service_node
+  "rclcpp"
+  "example_interfaces"
+)
+
+
+[터미널]
+ros2 service list
+rqt
