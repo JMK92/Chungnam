@@ -1,0 +1,53 @@
+gedit .bashrc
+
+맨아래에
+export ROS_DOMAIN_ID=30 #TURTLEBOT3
+export TURTLEBOT3_MODEL=burger
+
+
+터미널
+source .bashrc
+
+ssh ubuntu@10.42.0.1
+[ubuntu~$]
+ros2 launch turtlebot3_bringup robot.launch.py
+
+
+[phil~$] 
+ros2 node list
+ros2 topic list -t
+ros2 service list -t
+
+ros2 topic echo /battery_state
+
+
+cd colcon_ws/src/
+
+[~/colcon_ws/src$]
+ros2 pkg create my_turtlebot_pkg --build-type ament_cmake --dependencies rclcpp sensor_msgs --node-name battery_sub
+
+#  rcl : robot contorol library
+
+
+
+
+
+add_executable(battery_sub src/teleop_pub/main.cpp src/teleop_pub/teleopPub.h src/teleop_pub/teleopPub.cpp)
+
+add_executable(battery_sub src/battery_sub/main.cpp src/battery_sub/batterySub.h src/battery_sub/batterySub.cpp  src/teleop_pub/main.cpp src/teleop_pub/teleopPub.h src/teleop_pub/teleopPub.cpp)
+
+
+Windows
+getch()		# 엔터키 누를필요 없이 동작 # C표준함수는 아님 
+
+
+SharedPtr	파이썬 new > 객체 > ,,,
+(스마트ptr)	handler 클래스 같은거,,
+		내부적으로 레퍼런스카운터를 써서 객체를 관리함. delete안하도록.
+
+make_shared 	-> new쓴것처럼 객체를 만듦
+		지역변수로 만들어진 객체가 함수 끝나서 사라지면, 같이 사라짐.
+
+유니크ptr, 쉐어드ptr
+  유니크 - 딥카피씀..
+  쉐어드 - 레퍼런스카운터씀 , 같은객체가 여러개 만들어지지 않음
