@@ -1,0 +1,27 @@
+오전 - STL
+오후 - sound_service
+----------------------------------------------------------
+
+ssh ubuntu@10.42.0.1
+edgeilab
+
+ros2 launch turtlebot3_bringup robot.launch.py &
+// 뒤에 &를 붙이면 실행중에 터미널 계속 사용가능
+
+
+ros2 service list -t		// sound 타입확인 
+		// /sound [turtlebot3_msgs/srv/Sound]
+
+
+[다른 터미널창]
+code 
+ // my_turtlebot_pkg열고 sound 새로만듬
+
+rqt
+ >> Plugins - Services - Service Caller
+	Service - /sound 
+	value값을 바꿔가며 Call버튼 눌러봄 (0~3) [도레미파~ 도시라솔~ 삐뽀삐뽀..]
+
+
+colcon build
+ros2 run my_turtlebot_pkg sound_srv
