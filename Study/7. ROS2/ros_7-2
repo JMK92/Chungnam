@@ -1,0 +1,34 @@
+ssh ubuntu@10.42.0.1
+edgeilab
+
+[ubuntu@ubuntu:~$]
+ros2 launch turtlebot3_bringup robot.launch.py &
+
+
+[다른터미널창]
+[phil-vm:~$]
+ros2 param list
+	// parameter : 노드의 속성
+
+cd colcon_ws/src/
+
+[~/colcon_ws/src$]
+code
+
+// https://docs.ros.org/en/dashing/Tutorials/Using-Parameters-In-A-Class-CPP.html
+
+cd ..
+
+[~/colcon_ws$]
+colcon build
+source ~/.bashrc
+ros2 run my_pkg my_param
+
+ros2 param list
+
+ros2 param set /my_param my_parameter world
+
+
+ros2 run my_turtlebot_pkg sound_srv
+
+colcon build --packages-select my_pkg			// 패키지 선택적 빌드
