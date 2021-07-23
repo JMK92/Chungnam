@@ -1,0 +1,72 @@
+google - clion
+https://www.jetbrains.com/clion/download/download-thanks.html?platform=linux
+download
+
+[터미널창]
+cd 다운로드
+tar -xvzf CLion-2021.1.2.tar.gz		// 압축풀기
+cd clion-2021.1.2/bin
+./clion.sh
+
+평가판30일 - Evaluate for free 선택
+Evaluate버튼
+
+<< Welcome to CLion >>
+New Project
+- Location : /home/phil/CLionProjects/ScoreGrade4
+- Language : C++14  ??
+Create
+
+File - Settings - Editor - Font (글자크기 조정)
+
+cpp/scoreGrade에서 파일가져옴
+
+코드작성후
+build버튼 누른다음
+화면아래 Terminal누름
+
+cd cmake-build-debug
+./ScoreGrade4 < ../score.dat
+
+
+#####################################
+
+int nums[] = {1, 2, 3, 4, 5};
+int *p;
+p = nums;		// p = &nums[0];
+
+p(포인터)가 nums의 첫번째것을 가리킴
+
+#####################################
+
+vector는 random_access가능
+링크드리스트는 삽입삭제가 빠름
+
+vector는 원하는 위치에 한번에 갈 수 있지만,
+linked_list는 순차적(sequential)으로 접근해야함
+
+vector에 값을 추가하거나 빼면 내용물이 단체로 이동해서 시간이 오래걸리지만
+linked_list는 연결만 다르게 해주면 되므로 빠름
+
+#####################################
+
+gedit .bashrc
+alias clion='~/다운로드/clion-2021.1.2/bin/clion.sh'
+source ~/.bashrc
+clion
+// clion 바로실행
+
+#####################################
+
+
+new Project
+TestString
+
+
+[과제1] 문자열을 입력받아서 (대문자가 포함된 단어),
+	   (대문자가 포함되지 않은 단어)를 구분하여 출력.
+--> /STL/SplitWords.cpp
+
+[과제2] 입력받은 단어가 회문인지 체크하는 프로그램
+	   ex) 회문 : madam, civic
+--> /STL/Palindrome.cpp
