@@ -1,0 +1,25 @@
+ros2 topic echo "/my_topic" -> 받을때
+
+보낼때
+
+colcon build --package-select py_pubsub
+source ~/.bashrc - 다시 지정
+ros2 pkg executables py_pubsub
+ros2 run py_pubsub talker
+
+
+복사하기
+
+cp publisher_member_function.py subscriber_member_function.py
+
+gedit subscriber_member_function.py
+
+
+
+pub 
+
+ros2 run py_pubsub talker
+
+sub
+
+ros2 run py_pubsub listener
